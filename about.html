@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Ento9 - About</title>
+</head>
+<body>
+    <div class="navbar">
+        <div class="title">
+            <img src="icon/logo.png" alt="">
+        </div>
+        <div class="link">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="tutorial.html">Tutorials</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </div>
+        <div class="mob-icon burger" id="burger">
+            <button>
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </div>
+    <div class="mob-nav" id="menu">
+        <div class="link"></div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="tutorial.html">Tutorials</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </div>
+    </div>
+
+
+    <section>
+
+        <div class="card first">
+            <h2>About:</h2>
+            <p>YT Channel: <a target=”_blank” href="https://www.youtube.com/@ento9_10">https://www.youtube.com/@ento9_10</a>, Github: <a target=”_blank” href="https://github.com/EntoNine">https://github.com/EntoNine</a></p>
+        </div>
+
+        <div class="recent">
+
+        </div>
+
+    </section>
+
+
+    <script>
+        const burger = document.getElementById('burger');
+        const  menu = document.getElementById('menu');
+
+        burger.addEventListener('click', () => {
+            burger.classList.toggle('active');
+            menu.classList.toggle('active');
+        });
+
+
+
+    </script>
+</body>
+</html>

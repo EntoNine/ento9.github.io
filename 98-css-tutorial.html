@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Ento9 - 98-css-tutorial</title>
+</head>
+<body>
+    <div class="navbar">
+        <div class="title">
+            <img src="icon/logo.png" alt="">
+        </div>
+        <div class="link">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="tutorial.html">Tutorials</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </div>
+        <div class="mob-icon burger" id="burger">
+            <button>
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </div>
+    <div class="mob-nav" id="menu">
+        <div class="link"></div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="tutorial.html">Tutorials</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </div>
+    </div>
+
+
+    <section>
+
+        
+        <div class="text">
+            <div class="head">
+                <h2>98 CSS Framework Tutorial</h2>
+            </div>
+            <div class="line"></div>
+            <p>If you want to check out the video:</p><br>
+            <iframe width="420" height="315"
+            src="https://www.youtube.com/embed/aEBDHQj7vxQ">
+            </iframe>
+            <div class="line"></div><br>
+            <h3>What you need:</h3>
+            <br>
+            <ul>
+                <li>Code Editor <a target=”_blank” href="https://code.visualstudio.com/">(Like Visual Studio Code)</a></li>
+                <li>Internet Browser</li>
+            </ul>
+            <br>
+            <div class="line"></div>
+            <br>
+            <p>To start you will need to add the link of 98.css to your .html file</p>
+            <br>
+            <p>Include 98.css in your webpage --></p>
+            <br>
+            <h4>Code:</h4>
+            
+            <xmp>
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>NAME OF YOUR WEBPAGE</title>
+
+                <link rel="stylesheet" href="https://unpkg.com/98.css" >  
+                
+            </head>
+            
+            </xmp>
+
+            <br>
+
+            <h4>After:</h4><br>
+            <p>After you can go on the <a href="https://jdan.github.io/98.css/">98.css</a> website view what you can do: </p>
+            <br>
+            <ul>
+                <li>Original Windows 98 Button</li>
+                <li>Original Windows 98 Option Button/ Checkbox</li>
+                <li>Original Windows 98 GroupBox</li>
+                <li>Original Windows 98 TextBox</li>
+                <li>Original Windows 98 Slider</li>
+                <li>Original Windows 98 Dropdown</li>
+                <li>Original Windows 98 Window</li>
+                <li>Original Windows 98 Title Bar</li>
+                <li>Original Windows 98 Window contents</li>
+                <li>Original Windows 98 Status Bar</li>
+                <li>Original Windows 98 TreeView</li>
+                <li>Original Windows 98 Tabs</li>
+                <li>Original Windows 98 TableView</li>
+            </ul>
+
+            <div class="line"></div>
+            <p>The Original <a target=”_blank” href="https://github.com/jdan">creator</a> of 98.css </p>
+        </div>
+
+    </section>
+
+
+    <script>
+        const burger = document.getElementById('burger');
+        const  menu = document.getElementById('menu');
+
+        burger.addEventListener('click', () => {
+            burger.classList.toggle('active');
+            menu.classList.toggle('active');
+        });
+
+
+
+    </script>
+</body>
+</html>

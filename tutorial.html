@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Ento9 - Tutorials</title>
+</head>
+<body>
+    <div class="navbar">
+        <div class="title">
+            <img src="icon/logo.png" alt="">
+        </div>
+        <div class="link">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="tutorial.html">Tutorials</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </div>
+        <div class="mob-icon burger" id="burger">
+            <button>
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </div>
+    <div class="mob-nav" id="menu">
+        <div class="link"></div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="tutorial.html">Tutorials</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </div>
+    </div>
+
+
+    <section>
+        <div class="search-engine" id="searchengine">
+            <div class="mob-x">
+                <button onclick="searchMenuOpen()">
+                    <span></span>
+                    <span></span>
+                </button>  
+            </div>
+            <div class="search">
+                <input type="text" id="searchInput" placeholder="Search" onkeyup="searchArticles()">
+            </div>
+            <h4>All Articles:</h4>
+            <div class="all-article" id="articleList">
+                
+                <!-- Les liens seront générés ici -->
+            </div>
+        </div>
+
+        <div class="articles">
+
+            <div class="article">
+                <a href="98-css-tutorial.html">
+                    <img src="article-img/thumbnail4.png" alt="">
+                    <p>98.css, CSS Framework Tutorial</p>
+                </a>
+            </div>
+
+    </section>
+
+
+    <div class="mob-search">
+        <button onclick="searchMenuOpen()"><img src="icon/search.png" alt=""></button>
+    </div>
+
+
+    <script>
+        const burger = document.getElementById('burger');
+        const  menu = document.getElementById('menu');
+
+        burger.addEventListener('click', () => {
+            burger.classList.toggle('active');
+            menu.classList.toggle('active');
+        });
+
+        const search_menu = document.getElementById('searchengine');
+
+        function searchMenuOpen() {
+            search_menu.classList.toggle('active');
+        }
+
+        let articles = [];
+
+        // Fonction pour afficher les articles filtrés
+        function displayArticles(filteredArticles) {
+            const articleList = document.getElementById('articleList');
+            articleList.innerHTML = ''; // Vider la liste avant d'ajouter
+
+            filteredArticles.forEach(article => {
+                const link = document.createElement('a');
+                link.href = article.link;
+                link.textContent = article.name;
+                articleList.appendChild(link);
+            });
+        }
+
+        // Fonction de recherche d'articles
+        function searchArticles() {
+            const input = document.getElementById('searchInput').value.toLowerCase();
+            const filteredArticles = articles.filter(article => article.name.toLowerCase().includes(input));
+            displayArticles(filteredArticles); // Affiche les résultats filtrés
+        }
+
+        // Charger les articles depuis le fichier JSON
+        async function loadArticles() {
+            try {
+                const response = await fetch('articles.json');
+                articles = await response.json();
+                displayArticles(articles); // Afficher tous les articles au départ
+            } catch (error) {
+                console.error('Erreur lors du chargement du fichier JSON', error);
+            }
+        }
+
+        // Charger les articles au chargement de la page
+        window.onload = loadArticles;
+
+    </script>
+</body>
+</html>
